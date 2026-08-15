@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Miss Deraaaa 💜</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- PIN SCREEN -->
+    <section id="pin-screen" class="screen">
+
+        <div class="welcome">
+
+            <div class="sparkle">✦</div>
+
+            <h1>Psst... Miss Deraaaa 👀</h1>
+
+            <p>You weren't supposed to find this...</p>
+
+            <div class="pin-box">
+
+                <h2>🔐 Enter the secret code</h2>
+
+                <input
+                    type="password"
+                    id="pin"
+                    maxlength="4"
+                    placeholder="••••"
+                >
+
+                <button onclick="checkPin()">Enter 💜</button>
+
+                <p id="message"></p>
+
+            </div>
+
+            <div class="bow">🎀</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COUNTDOWN SCREEN -->
+<section id="countdown-screen" class="screen hidden">
+
+    <div class="welcome">
+
+        <div class="sparkle">✦ ✧ ✦</div>
+
+        <p class="little-text">
+            Well well well...
+        </p>
+
+        <h1>Something special is waiting for you 👀</h1>
+
+        <div id="countdown">
+            00 : 00 : 10
+        </div>
+
+        <p class="countdown-label">
+            Be patient, Aladdin 🎀
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- BIRTHDAY SCREEN -->
+<section id="birthday-screen" class="screen hidden">
+
+    <div class="birthday-card">
+
+        <div class="sparkle">✦ ✧ ✦</div>
+
+        <p class="little-text">
+            The wait is over...
+        </p>
+
+        <h1>HAPPY BIRTHDAY</h1>
+
+        <h2>MISS DERAAAAA 💜🎀</h2>
+
+        <p class="birthday-text">
+            Or should I say...
+        </p>
+
+        <div class="aladdin">
+            ALADDIN 😭💜
+        </div>
+
+        <p class="birthday-text">
+            Your little surprise awaits you ✨
+        </p>
+
+        <button onclick="openLetter()">
+            💌 Open your surprise
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- LETTER SCREEN -->
+<section id="letter-screen" class="screen hidden">
+
+    <div class="letter-container">
+
+        <div class="letter-title">
+            <span>✦</span>
+            A little letter for you
+            <span>✦</span>
+        </div>
+
+        <div class="letter-paper">
+
+            <div class="paper-decoration top-left">🌸</div>
+            <div class="paper-decoration top-right">✨</div>
+
+            <div class="letter-content">
+<p class="dear">Dear Aladdin, 🎀</p>
+
+<p>
+    Happy birthdayyyyyy!! 😭🎂💜
+</p>
+
+<p>
+    Honestly, it's kind of crazy to think we've been friends since JSS3.
+    Like... excuse me??? How did we get from "oh, we're friends now"
+    to somehow having an endless supply of things to talk about? 😭
+</p>
+
+<p>
+    I genuinely don't think we've ever had a conversation where we
+    reached the end and went, "well... I guess that's everything."
+    There is ALWAYS something else. A story, some random thought,
+    somebody's nonsense, something that happened five minutes ago...
+    somehow we can turn literally anything into a conversation. 😂
+</p>
+
+<p>
+    And one of the things I appreciate most about you is how genuinely
+    sweet and supportive you are. You're the kind of person who makes
+    people feel comfortable being themselves, and you always try to
+    make sure nobody is being left out. I really admire that about you. 💗
+</p>
+
+<p>
+    But let's not forget that you're also the friend who will look at me
+    making a completely questionable decision and basically go:
+</p>
+
+<p class="quote">
+    "Girl... are you actually being serious right now?" 😭
+</p>
+
+<p>
+    And honestly? Sometimes I need that. 😂
+</p>
+
+<p>
+    I love that you can be sweet and caring while still being completely
+    willing to tell someone when they're being stupid. It's a very
+    important friendship service, actually. Someone has to keep us alive. 😭
+</p>
+
+<p>
+    And your voice??? Girl. You have such a sweet voice. Like how are you
+    casually talking while sounding like the human version of a warm hug??? 😭💗
+</p>
+
+<p>
+    I'm genuinely grateful that I got to meet you and that our friendship
+    has grown into what it is now. You've become one of those people who
+    makes ordinary days more fun just by being there.
+</p>
+
+<p>
+    I hope this new year of your life brings you so many beautiful moments,
+    so much happiness, and people who appreciate you the way you deserve
+    to be appreciated.
+</p>
+
+<p>
+    I hope you keep being the sweet, supportive, slightly unserious,
+    tell-me-when-I'm-being-stupid person that you are. 😂💗
+</p>
+
+<p>
+    And I hope we continue having those conversations that somehow start
+    with one completely normal topic and end somewhere neither of us
+    remembers how we got to. 😭
+</p>
+
+<p>
+    Thank you for being you, and thank you for being my friend.
+</p>
+
+<p class="closing">
+    Happy birthday, Miss Deraaaa. 🎂🎀💜
+</p>
+
+<p>
+    Here's to more memories, more laughter, more random conversations,
+    more chaos, and hopefully slightly fewer questionable decisions. 😭
+</p>
+
+<p>
+    Love you lots, Aladdin. 🫶🏽💗
+</p>
+
+<p class="signature">
+    With love,<br>
+    <span>Your favourite person 😌🎀</span>
+</p>
+
+<p class="ps">
+    P.S. Yes, I called you Aladdin on your birthday website.
+    You knew what you signed up for. 😭🎀
+</p>
+                
+                
+
+            </div>
+
+            <div class="paper-decoration bottom-left">🦋</div>
+            <div class="paper-decoration bottom-right">🌷</div>
+
+        </div>
+
+        <p class="letter-hint">♡ made especially for you ♡</p>
+        <button class="memory-button" onclick="showGallery()">
+    Open the memories 📸
+</button>
+
+    </div>
+
+</section>
+<!-- MEMORY GALLERY -->
+<section id="gallery-screen" class="screen hidden">
+
+    <div class="gallery-container">
+
+        <p class="gallery-small-title">a little collection of memories ♡</p>
+
+        <h1>Our Little Memories 📸</h1>
+
+        <p class="gallery-intro">
+            Because some moments deserve to be kept forever. ✨
+        </p>
+
+        <div class="memory-grid">
+
+            <div class="memory-card rotate-left">
+                <img src="pictures/photo1.jpg" alt="Memory 1">
+                <p>just us being us 🤍</p>
+            </div>
+
+            <div class="memory-card rotate-right">
+                <img src="pictures/photo2.jpg" alt="Memory 2">
+                <p>another day, another memory ✨</p>
+            </div>
+
+            <div class="memory-card rotate-left">
+                <img src="pictures/photo3.jpg" alt="Memory 3">
+                <p>the chaos continues 😭</p>
+            </div>
+
+            <div class="memory-card rotate-right">
+                <img src="pictures/photo4.jpg" alt="Memory 4">
+                <p>one for the scrapbook 🦋</p>
+            </div>
+
+            <div class="memory-card rotate-left">
+                <img src="pictures/photo5.jpg" alt="Memory 5">
+                <p>pretty moments 💗</p>
+            </div>
+
+            <div class="memory-card rotate-right">
+                <img src="pictures/photo6.jpg" alt="Memory 6">
+                <p>and we were iconic ✨</p>
+            </div>
+
+            <div class="memory-card rotate-left">
+                <img src="pictures/photo7.jpg" alt="Memory 7">
+                <p>one last memory 🤍</p>
+            </div>
+
+        </div>
+        <div class="music-card">
+
+    <div class="music-icon">♫</div>
+
+    <div class="music-info">
+        <span>A little song for you</span>
+        <strong>Dandelions — Ruth B.</strong>
+    </div>
+
+    <a
+        href="https://open.spotify.com/track/2eAvDnpXP5W0cVtiI0PUxV"
+        target="_blank"
+        class="spotify-button"
+    >
+        ▶ Listen
+    </a>
+
+</div>
+
+        <button class="final-button" onclick="showFinalScreen()">
+            There's one more thing... ✨
+        </button>
+
+    </div>
+<button class="secret-ribbon" onclick="openEasterEgg()">
+    🎀
+</button>
+
+<div id="easter-egg" class="easter-egg hidden">
+
+    <div class="easter-card">
+
+        <div class="easter-ribbon">🎀</div>
+
+        <h2>YOU FOUND IT! 😭💜</h2>
+
+        <p>
+            Okayyyy Miss Deraaaa...
+        </p>
+
+        <p>
+            You weren't even supposed to find this. 👀
+        </p>
+
+        <p>
+            But since you're here, here's a secret reminder:
+            you're genuinely one of the people who makes life
+            a little more fun. 🥹
+        </p>
+
+        <p>
+            Now go enjoy your birthday before I start getting emotional. 😭🎀
+        </p>
+
+        <button onclick="closeEasterEgg()">
+            Okayyy bye 😭
+        </button>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- FINAL SCREEN -->
+<section id="final-screen" class="screen hidden">
+
+    <div class="final-message">
+
+        <div class="final-sparkles">✦ ✧ ✦</div>
+
+        <h1>Happy Birthday, Aladdin! 🎂</h1>
+
+        <p>
+            Here's to more laughs, more memories,
+            more chaos and an amazing year ahead. 🩷
+        </p>
+
+        <div class="big-heart">♡</div>
+
+        <p class="final-signature">
+            With love,<br>
+            your favourite person ✨
+        </p>
+
+        <div class="final-sparkles">✧ ✦ ✧</div>
+
+    </div>
+
+</section>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,948 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #eee4ff;
+
+    font-family: Georgia, serif;
+    color: #5c4775;
+
+    text-align: center;
+}
+
+.welcome {
+    background: #fffaff;
+
+    width: 80%;
+    max-width: 500px;
+
+    padding: 50px 30px;
+
+    border-radius: 30px;
+
+    box-shadow: 0 10px 30px rgba(92, 71, 117, 0.15);
+}
+
+.sparkle {
+    font-size: 30px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+p {
+    font-size: 17px;
+}
+
+.pin-box {
+    margin-top: 30px;
+}
+
+input {
+    display: block;
+
+    margin: 20px auto;
+
+    padding: 15px;
+
+    width: 120px;
+
+    border: 2px solid #cbb5e8;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    font-size: 20px;
+
+    outline: none;
+}
+
+button {
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: #9b7bc4;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #8060a8;
+}
+
+.bow {
+    margin-top: 25px;
+    font-size: 30px;
+}
+
+#message {
+    color: #9b4d8c;
+    font-weight: bold;
+}
+.hidden {
+    display: none !important;
+}
+
+.screen {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+.little-text {
+    font-style: italic;
+    font-size: 20px;
+}
+
+#countdown {
+    margin-top: 30px;
+
+    font-size: 38px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    color: #8060a8;
+}
+
+.countdown-label {
+    font-size: 12px;
+    color: #9b7bc4;
+}
+.birthday-card {
+    background: #fffaff;
+
+    width: 80%;
+    max-width: 550px;
+
+    padding: 50px 30px;
+
+    border-radius: 30px;
+
+    box-shadow: 0 10px 30px rgba(92, 71, 117, 0.15);
+
+    text-align: center;
+}
+
+.birthday-card h1 {
+    font-size: 42px;
+    color: #8060a8;
+    margin-bottom: 5px;
+}
+
+.birthday-card h2 {
+    font-size: 30px;
+    color: #9b7bc4;
+}
+
+.birthday-text {
+    font-size: 18px;
+}
+
+.aladdin {
+    font-size: 32px;
+    font-weight: bold;
+
+    margin: 20px 0;
+
+    color: #8060a8;
+}
+
+.birthday-card button {
+    margin-top: 20px;
+}
+
+.letter-container {
+    text-align: center;
+}
+
+.envelope {
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+.envelope:hover {
+    transform: translateY(-8px);
+}
+
+.envelope-top {
+    font-size: 70px;
+}
+
+.envelope-body {
+    background: #fffaff;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(92, 71, 117, 0.15);
+}
+
+.envelope-body p {
+    font-size: 25px;
+    color: #8060a8;
+}
+
+.envelope-body span {
+    font-size: 15px;
+    color: #9b7bc4;
+}
+/* 💌 ENVELOPE */
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 30px auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.envelope:hover {
+    transform: translateY(-8px);
+}
+
+.envelope-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background: #c8b5e8;
+    border-radius: 8px;
+    box-shadow: 0 12px 25px rgba(92, 71, 117, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 100px solid #b59bd6;
+
+    transform-origin: top;
+    transition: transform 0.6s ease;
+
+    z-index: 3;
+}
+
+.envelope-heart {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.envelope-body p {
+    font-size: 20px;
+    margin: 5px;
+    color: #5c4775;
+}
+
+.envelope-body span {
+    font-size: 14px;
+    color: #8060a8;
+}
+
+/* ✨ OPENING ANIMATION */
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope.open {
+    transform: translateY(-5px);
+}
+/* 💌 LETTER */
+
+.letter {
+    position: absolute;
+
+    width: 270px;
+    max-height: 360px;
+
+    left: 15px;
+    bottom: 25px;
+
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    background: #fffaff;
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 20px rgba(92, 71, 117, 0.15);
+
+    color: #5c4775;
+
+    text-align: left;
+
+    transform: translateY(20px);
+
+    opacity: 0;
+
+    overflow-y: auto;
+
+    transition:
+        transform 0.8s ease,
+        opacity 0.8s ease;
+
+    z-index: 1;
+}
+
+.letter h2 {
+    text-align: center;
+
+    color: #8060a8;
+
+    margin-top: 0;
+}
+
+.letter p {
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+.letter .signature {
+    text-align: right;
+
+    margin-top: 20px;
+}
+
+.envelope.open .letter {
+    transform: translateY(-110px);
+
+    opacity: 1;
+
+    z-index: 4;
+}
+/* =========================
+   CLASSY BIRTHDAY LETTER
+========================= */
+
+#letter-screen {
+    min-height: 100vh;
+    overflow-y: auto;
+    padding: 50px 20px;
+}
+
+.letter-container {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+.letter-title {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.letter-title span {
+    margin: 0 12px;
+    color: #f5c7dc;
+}
+
+.letter-paper {
+    position: relative;
+    background: #fffafc;
+    color: #4d3b45;
+    border-radius: 8px;
+    padding: 55px 55px;
+    text-align: left;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25),
+        0 5px 15px rgba(255, 180, 210, 0.2);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    animation: letterAppear 0.8s ease;
+}
+
+.letter-paper::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(190, 130, 160, 0.25);
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+.letter-content {
+    position: relative;
+    z-index: 2;
+}
+
+.dear {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    color: #8d5571;
+    margin-bottom: 30px;
+}
+
+.letter-content p {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 24px;
+}
+
+.closing {
+    color: #8d5571;
+    font-weight: bold;
+    margin-top: 35px;
+}
+
+.signature {
+    font-family: cursive !important;
+    font-size: 20px !important;
+    text-align: right;
+    color: #8d5571;
+    margin-top: 40px;
+}
+
+.signature span {
+    font-size: 24px;
+}
+
+.paper-decoration {
+    position: absolute;
+    font-size: 28px;
+    z-index: 3;
+    opacity: 0.75;
+}
+
+.top-left {
+    top: 20px;
+    left: 25px;
+}
+
+.top-right {
+    top: 20px;
+    right: 25px;
+}
+
+.bottom-left {
+    bottom: 20px;
+    left: 25px;
+}
+
+.bottom-right {
+    bottom: 20px;
+    right: 25px;
+}
+
+.letter-hint {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 25px;
+}
+
+@keyframes letterAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .letter-paper {
+        padding: 45px 28px;
+    }
+
+    .letter-content p {
+        font-size: 15px;
+    }
+
+    .dear {
+        font-size: 21px;
+    }
+
+}
+/* =========================
+   MEMORY GALLERY
+========================= */
+
+#gallery-screen {
+    min-height: 100vh;
+    overflow-y: auto;
+    padding: 60px 20px 80px;
+}
+
+.gallery-container {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.gallery-small-title {
+    color: rgba(255, 255, 255, 0.75);
+    font-family: Georgia, serif;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.gallery-container h1 {
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 38px;
+    margin: 10px 0;
+}
+
+.gallery-intro {
+    color: rgba(255, 255, 255, 0.85);
+    font-family: Georgia, serif;
+    margin-bottom: 50px;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px 30px;
+    align-items: center;
+}
+
+.memory-card {
+    background: #fffafc;
+    padding: 12px 12px 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.memory-card:hover {
+    transform: rotate(0deg) translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.memory-card p {
+    color: #654b59;
+    font-family: cursive;
+    font-size: 17px;
+    margin: 15px 5px 0;
+}
+
+.rotate-left {
+    transform: rotate(-3deg);
+}
+
+.rotate-right {
+    transform: rotate(3deg);
+}
+
+.memory-button,
+.final-button {
+    margin-top: 55px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #fffafc;
+    color: #8d5571;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.memory-button:hover,
+.final-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.23);
+}
+
+
+/* =========================
+   FINAL SCREEN
+========================= */
+
+#final-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+}
+
+.final-message {
+    max-width: 650px;
+    color: white;
+    animation: letterAppear 1s ease;
+}
+
+.final-message h1 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    margin: 20px 0;
+}
+
+.final-message p {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.big-heart {
+    font-size: 80px;
+    margin: 25px 0;
+    animation: heartBeat 1.8s infinite ease-in-out;
+}
+
+.final-signature {
+    font-family: cursive !important;
+}
+
+.final-sparkles {
+    font-size: 25px;
+    letter-spacing: 10px;
+    color: #f5c7dc;
+}
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: auto;
+    }
+
+    .memory-card img {
+        height: 380px;
+    }
+
+    .gallery-container h1 {
+        font-size: 30px;
+    }
+
+    .final-message h1 {
+        font-size: 32px;
+    }
+}
+/* =========================
+   🎵 MUSIC CARD
+========================= */
+
+.music-card {
+    max-width: 520px;
+    margin: 50px auto 20px;
+
+    padding: 16px 20px;
+
+    background: rgba(255, 250, 252, 0.92);
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    color: #654b59;
+}
+
+.music-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #e6d2f5;
+
+    font-size: 23px;
+}
+
+.music-info {
+    flex: 1;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.music-info span {
+    font-size: 12px;
+    opacity: 0.65;
+}
+
+.music-info strong {
+    font-family: Georgia, serif;
+    font-size: 15px;
+}
+
+.spotify-button {
+    text-decoration: none;
+
+    padding: 9px 16px;
+
+    border-radius: 20px;
+
+    background: #8d5571;
+    color: white;
+
+    font-size: 13px;
+
+    transition: transform 0.2s ease;
+}
+
+.spotify-button:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   🎀 SECRET RIBBON
+========================= */
+
+.secret-ribbon {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 58px;
+    height: 58px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 240, 249, 0.9);
+
+    font-size: 27px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+    animation: ribbonFloat 3s ease-in-out infinite;
+
+    z-index: 20;
+}
+
+.secret-ribbon:hover {
+    transform: scale(1.12);
+}
+
+@keyframes ribbonFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(4deg);
+    }
+
+}
+
+
+/* =========================
+   💜 EASTER EGG
+========================= */
+
+.easter-egg {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(52, 35, 63, 0.55);
+
+    backdrop-filter: blur(6px);
+
+    z-index: 100;
+
+    animation: fadeIn 0.4s ease;
+}
+
+.easter-card {
+    max-width: 450px;
+
+    padding: 40px 35px;
+
+    background: #fffafd;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    color: #5c4775;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+    animation: popIn 0.5s ease;
+}
+
+.easter-ribbon {
+    font-size: 55px;
+
+    animation: ribbonFloat 2s ease-in-out infinite;
+}
+
+.easter-card h2 {
+    font-family: Georgia, serif;
+
+    color: #8d5571;
+
+    margin: 15px 0 25px;
+}
+
+.easter-card p {
+    line-height: 1.7;
+
+    font-family: Georgia, serif;
+}
+
+.easter-card button {
+    margin-top: 20px;
+
+    padding: 11px 22px;
+
+    border: none;
+    border-radius: 20px;
+
+    background: #c8b5e8;
+
+    color: #4d3b45;
+
+    cursor: pointer;
+}
+
+@keyframes popIn {
+
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* 📱 Mobile */
+
+@media (max-width: 600px) {
+
+    .music-card {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .spotify-button {
+        padding: 8px 12px;
+    }
+
+    .secret-ribbon {
+        right: 15px;
+        bottom: 15px;
+    }
+
+}
+.quote {
+    text-align: center;
+    color: #8d5571;
+    font-style: italic;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-left: 3px solid #d8b7e8;
+    border-right: 3px solid #d8b7e8;
+}
+
+.ps {
+    margin-top: 35px !important;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(141, 85, 113, 0.3);
+    font-size: 14px !important;
+    color: #8d5571;
+    font-style: italic;
+}
