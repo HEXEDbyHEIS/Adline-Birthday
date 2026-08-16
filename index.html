@@ -14,36 +14,67 @@
     <!-- PIN SCREEN -->
     <section id="pin-screen" class="screen">
 
-        <div class="welcome">
+    <div class="pin-page">
 
-            <div class="sparkle">✦</div>
+        <div class="pin-ornament top-ornament">
+            ✦
+        </div>
 
-            <h1>Psst... Miss Deraaaa 👀</h1>
+        <p class="invitation-label">
+            A PRIVATE INVITATION
+        </p>
 
-            <p>You weren't supposed to find this...</p>
+        <div class="pin-divider">
+            <span>────</span>
+            ✦
+            <span>────</span>
+        </div>
 
-            <div class="pin-box">
+        <h1>
+            For Miss Deraaaa
+        </h1>
 
-                <h2>🔐 Enter the secret code</h2>
+        <p class="pin-subtitle">
+            Something has been prepared especially for you.
+        </p>
 
-                <input
-                    type="password"
-                    id="pin"
-                    maxlength="4"
-                    placeholder="••••"
-                >
+        <div class="pin-card">
 
-                <button onclick="checkPin()">Enter 💜</button>
-
-                <p id="message"></p>
-
+            <div class="card-bow">
+                🎀
             </div>
 
-            <div class="bow">🎀</div>
+            <p class="secret-label">
+                THE SECRET CODE
+            </p>
+
+            <p class="pin-instruction">
+                Enter the four-digit code you were given
+            </p>
+
+            <input
+                type="password"
+                id="pin"
+                maxlength="4"
+                placeholder="••••"
+            >
+
+            <button onclick="checkPin()">
+                Unlock the invitation
+                <span>✦</span>
+            </button>
+
+            <p id="message"></p>
 
         </div>
 
-    </section>
+        <p class="bottom-note">
+            ✦ with a little something special ✦
+        </p>
+
+    </div>
+
+</section>
 
 
     <!-- COUNTDOWN SCREEN -->
@@ -75,32 +106,62 @@
 <!-- BIRTHDAY SCREEN -->
 <section id="birthday-screen" class="screen hidden">
 
-    <div class="birthday-card">
+    <div class="birthday-page">
 
-        <div class="sparkle">✦ ✧ ✦</div>
+        <div class="birthday-ornament">
+            ✦
+        </div>
 
-        <p class="little-text">
-            The wait is over...
+        <p class="birthday-eyebrow">
+            THE WAIT IS OVER
         </p>
 
-        <h1>HAPPY BIRTHDAY</h1>
+        <div class="birthday-divider">
+            <span>────</span>
+            ✦
+            <span>────</span>
+        </div>
 
-        <h2>MISS DERAAAAA 💜🎀</h2>
+        <p class="birthday-intro">
+            A little celebration for someone very special
+        </p>
 
-        <p class="birthday-text">
-            Or should I say...
+        <h1>
+            Happy Birthday
+        </h1>
+
+        <h2>
+            Adline
+        </h2>
+
+        <p class="birthday-name">
+            Miss Deraaaa
         </p>
 
         <div class="aladdin">
-            ALADDIN 😭💜
+            <span>✦</span>
+            Aladdin
+            <span>✦</span>
         </div>
 
-        <p class="birthday-text">
-            Your little surprise awaits you ✨
+        <p class="birthday-message">
+            Because obviously, a normal birthday message<br>
+            would never be enough for you. 😭
+        </p>
+
+        <div class="birthday-divider bottom-divider">
+            <span>────</span>
+            🎀
+            <span>────</span>
+        </div>
+
+        <p class="surprise-hint">
+            Your little surprise is waiting...
         </p>
 
         <button onclick="openLetter()">
-            💌 Open your surprise
+            Open your surprise
+            <span>✦</span>
         </button>
 
     </div>
@@ -109,6 +170,61 @@
 
 
 <!-- LETTER SCREEN -->
+ <section id="envelope-screen" class="screen hidden">
+
+    <div class="envelope-page">
+
+        <p class="envelope-eyebrow">
+            SOMETHING FOR YOU
+        </p>
+
+        <div class="envelope-divider">
+            <span>────</span>
+            ✦
+            <span>────</span>
+        </div>
+
+        <p class="envelope-hint">
+            There's a little something waiting inside...
+        </p>
+
+        <button
+            class="envelope-wrapper"
+            onclick="openEnvelope()"
+            aria-label="Open your letter"
+        >
+
+            <div class="envelope">
+
+                <div class="envelope-back"></div>
+
+                <div class="letter-peek">
+                    <span>For Adline</span>
+                </div>
+
+                <div class="envelope-front"></div>
+
+                <div class="envelope-flap"></div>
+
+                <div class="envelope-seal">
+                    ✦
+                </div>
+
+            </div>
+
+        </button>
+
+        <p class="envelope-instruction">
+            Click the envelope to open
+        </p>
+
+        <p class="envelope-name">
+            Miss Deraaaa 🎀
+        </p>
+
+    </div>
+
+</section>
 <section id="letter-screen" class="screen hidden">
 
     <div class="letter-container">
@@ -260,12 +376,12 @@
 
             <div class="memory-card rotate-left">
                 <img src="pictures/photo1.jpg" alt="Memory 1">
-                <p>just us being us 🤍</p>
+                <p>My adorable Chidera 😘</p>
             </div>
 
             <div class="memory-card rotate-right">
                 <img src="pictures/photo2.jpg" alt="Memory 2">
-                <p>another day, another memory ✨</p>
+                <p> I was taller that day 😂</p>
             </div>
 
             <div class="memory-card rotate-left">
@@ -275,22 +391,22 @@
 
             <div class="memory-card rotate-right">
                 <img src="pictures/photo4.jpg" alt="Memory 4">
-                <p>one for the scrapbook 🦋</p>
+                <p>Unforgivably cute 😍</p>
             </div>
 
             <div class="memory-card rotate-left">
                 <img src="pictures/photo5.jpg" alt="Memory 5">
-                <p>pretty moments 💗</p>
+                <p>Sweet Addy 🥰</p>
             </div>
 
             <div class="memory-card rotate-right">
                 <img src="pictures/photo6.jpg" alt="Memory 6">
-                <p>and we were iconic ✨</p>
+                <p>My four eyed Princess 🤓</p>
             </div>
 
             <div class="memory-card rotate-left">
                 <img src="pictures/photo7.jpg" alt="Memory 7">
-                <p>one last memory 🤍</p>
+                <p>Slay Sistaaaaa 😝😝</p>
             </div>
 
         </div>
@@ -361,6 +477,8 @@
 <!-- FINAL SCREEN -->
 <section id="final-screen" class="screen hidden">
 
+    <div id="fireworks"></div>
+
     <div class="final-message">
 
         <div class="final-sparkles">✦ ✧ ✦</div>
@@ -382,6 +500,8 @@
         <div class="final-sparkles">✧ ✦ ✧</div>
 
     </div>
+
+</section>
 
 </section>
 <script src="script.js"></script>
