@@ -503,241 +503,320 @@ button:hover {
     }
 
 }
-/* =========================
-   MEMORY GALLERY
-========================= */
+/* ==========================================
+   📸 OUR LITTLE MEMORIES
+========================================== */
 
 #gallery-screen {
     min-height: 100vh;
-    overflow-y: auto;
-    padding: 60px 20px 80px;
+
+    padding: 70px 20px 90px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,0.8),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(214,193,228,0.3),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #e8dcef,
+            #f9edf3 50%,
+            #e2d5eb
+        );
+
+    position: relative;
+    overflow: hidden;
 }
+
+
+/* Main gallery */
 
 .gallery-container {
-    max-width: 1000px;
+    width: 100%;
+    max-width: 1050px;
+
     margin: auto;
+
     text-align: center;
+
+    position: relative;
+    z-index: 2;
+
+    animation: galleryEntrance 1s ease;
 }
+
+@keyframes galleryEntrance {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Tiny title */
 
 .gallery-small-title {
-    color: rgba(255, 255, 255, 0.75);
-    font-family: Georgia, serif;
-    letter-spacing: 2px;
-    font-size: 14px;
-    margin-bottom: 10px;
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #8d7182;
+
+    margin: 0 0 13px;
 }
+
+
+/* Main heading */
 
 .gallery-container h1 {
-    color: white;
-    font-family: Georgia, serif;
-    font-size: 38px;
-    margin: 10px 0;
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(38px, 6vw, 58px);
+
+    font-weight: 400;
+
+    color: #624b69;
+
+    margin: 0;
 }
 
+
+/* Intro */
+
 .gallery-intro {
-    color: rgba(255, 255, 255, 0.85);
-    font-family: Georgia, serif;
-    margin-bottom: 50px;
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #897783;
+
+    font-size: 14px;
+
+    margin: 16px auto 50px;
+
+    font-style: italic;
 }
+
+
+/* ==========================================
+   📷 MEMORY GRID
+========================================== */
 
 .memory-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 45px 30px;
+
     align-items: center;
+
+    margin-bottom: 65px;
 }
+
+
+/* Photo card */
 
 .memory-card {
-    background: #fffafc;
-    padding: 12px 12px 25px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fffdf9;
+
+    padding: 12px 12px 18px;
+
+    border: 1px solid rgba(183,154,114,0.18);
+
+    box-shadow:
+        0 15px 35px rgba(73,52,79,0.14);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+    position: relative;
 }
 
-.memory-card:hover {
-    transform: rotate(0deg) translateY(-8px) scale(1.03);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+
+/* Tiny decorative pin */
+
+.memory-card::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: -10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #b79a72;
+
+    font-size: 13px;
+
+    z-index: 3;
 }
+
+
+/* Images */
 
 .memory-card img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
     display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 1px;
 }
+
+
+/* Captions */
 
 .memory-card p {
-    color: #654b59;
-    font-family: cursive;
-    font-size: 17px;
-    margin: 15px 5px 0;
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #725878;
+
+    font-size: 12px;
+
+    font-style: italic;
+
+    margin: 13px 4px 0;
 }
 
+
+/* Rotations */
+
 .rotate-left {
-    transform: rotate(-3deg);
+    transform: rotate(-2deg);
 }
 
 .rotate-right {
-    transform: rotate(3deg);
-}
-
-.memory-button,
-.final-button {
-    margin-top: 55px;
-    padding: 14px 28px;
-    border: none;
-    border-radius: 30px;
-    background: #fffafc;
-    color: #8d5571;
-    font-family: Georgia, serif;
-    font-size: 15px;
-    cursor: pointer;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.memory-button:hover,
-.final-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.23);
+    transform: rotate(2deg);
 }
 
 
-/* =========================
-   FINAL SCREEN
-========================= */
+/* Hover */
 
-#final-screen {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    text-align: center;
-}
+.memory-card:hover {
+    transform:
+        translateY(-8px)
+        rotate(0deg);
 
-.final-message {
-    max-width: 650px;
-    color: white;
-    animation: letterAppear 1s ease;
-}
+    box-shadow:
+        0 22px 45px rgba(73,52,79,0.2);
 
-.final-message h1 {
-    font-family: Georgia, serif;
-    font-size: 42px;
-    margin: 20px 0;
-}
-
-.final-message p {
-    font-family: Georgia, serif;
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-.big-heart {
-    font-size: 80px;
-    margin: 25px 0;
-    animation: heartBeat 1.8s infinite ease-in-out;
-}
-
-.final-signature {
-    font-family: cursive !important;
-}
-
-.final-sparkles {
-    font-size: 25px;
-    letter-spacing: 10px;
-    color: #f5c7dc;
-}
-
-@keyframes heartBeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.12);
-    }
+    z-index: 5;
 }
 
 
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    .memory-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: auto;
-    }
-
-    .memory-card img {
-        height: 380px;
-    }
-
-    .gallery-container h1 {
-        font-size: 30px;
-    }
-
-    .final-message h1 {
-        font-size: 32px;
-    }
-}
-/* =========================
+/* ==========================================
    🎵 MUSIC CARD
-========================= */
+========================================== */
 
 .music-card {
-    max-width: 520px;
-    margin: 50px auto 20px;
+    max-width: 620px;
 
-    padding: 16px 20px;
-
-    background: rgba(255, 250, 252, 0.92);
-    border-radius: 18px;
+    margin: 0 auto 40px;
 
     display: flex;
+
     align-items: center;
-    gap: 15px;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    gap: 18px;
 
-    color: #654b59;
+    text-align: left;
+
+    padding: 18px 20px;
+
+    background: rgba(255,253,249,0.88);
+
+    border: 1px solid rgba(183,154,114,0.22);
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 15px 35px rgba(73,52,79,0.12);
+
+    backdrop-filter: blur(10px);
 }
+
+
+/* Music icon */
 
 .music-icon {
     width: 45px;
     height: 45px;
 
-    border-radius: 50%;
+    flex-shrink: 0;
 
     display: flex;
-    justify-content: center;
+
     align-items: center;
+    justify-content: center;
 
-    background: #e6d2f5;
+    border-radius: 50%;
 
-    font-size: 23px;
+    background: #e5d3e8;
+
+    color: #80658f;
+
+    font-size: 20px;
 }
+
+
+/* Music information */
 
 .music-info {
     flex: 1;
-    text-align: left;
 
     display: flex;
+
     flex-direction: column;
+
     gap: 4px;
 }
 
 .music-info span {
-    font-size: 12px;
-    opacity: 0.65;
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #9a8492;
 }
 
 .music-info strong {
-    font-family: Georgia, serif;
-    font-size: 15px;
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    color: #624b69;
 }
+
+
+/* Spotify button */
 
 .spotify-button {
     text-decoration: none;
@@ -746,68 +825,115 @@ button:hover {
 
     border-radius: 20px;
 
-    background: #8d5571;
+    background: #80658f;
+
     color: white;
 
-    font-size: 13px;
+    font-family: Georgia, "Times New Roman", serif;
 
-    transition: transform 0.2s ease;
+    font-size: 11px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
 }
 
 .spotify-button:hover {
-    transform: scale(1.05);
+    background: #725878;
+
+    transform: translateY(-2px);
 }
 
 
-/* =========================
-   🎀 SECRET RIBBON
-========================= */
+/* ==========================================
+   ✨ FINAL BUTTON
+========================================== */
 
-.secret-ribbon {
-    position: fixed;
+.final-button {
+    border: 1px solid rgba(183,154,114,0.3);
 
-    right: 25px;
-    bottom: 25px;
+    background: transparent;
 
-    width: 58px;
-    height: 58px;
+    color: #80658f;
 
-    border: none;
-    border-radius: 50%;
+    padding: 13px 25px;
 
-    background: rgba(255, 240, 249, 0.9);
+    border-radius: 25px;
 
-    font-size: 27px;
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 13px;
 
     cursor: pointer;
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
-
-    animation: ribbonFloat 3s ease-in-out infinite;
-
-    z-index: 20;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
-.secret-ribbon:hover {
-    transform: scale(1.12);
+.final-button:hover {
+    background: #80658f;
+
+    color: white;
+
+    transform: translateY(-3px);
 }
 
-@keyframes ribbonFloat {
 
-    0%, 100% {
-        transform: translateY(0) rotate(-4deg);
+/* ==========================================
+   📱 MOBILE
+========================================== */
+
+@media (max-width: 750px) {
+
+    #gallery-screen {
+        padding: 55px 18px 70px;
     }
 
-    50% {
-        transform: translateY(-10px) rotate(4deg);
+    .memory-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 30px 18px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 330px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .memory-card {
+        padding: 10px 10px 16px;
+    }
+
+    .music-card {
+        flex-wrap: wrap;
+
+        text-align: center;
+
+        justify-content: center;
+    }
+
+    .music-info {
+        flex-basis: 70%;
     }
 
 }
 
 
-/* =========================
-   💜 EASTER EGG
-========================= */
+
+/* ==========================================
+   🎀 SECRET EASTER EGG
+========================================== */
 
 .easter-egg {
     position: fixed;
@@ -818,79 +944,210 @@ button:hover {
     justify-content: center;
     align-items: center;
 
-    padding: 20px;
+    padding: 25px;
 
-    background: rgba(52, 35, 63, 0.55);
+    background: rgba(55, 40, 63, 0.62);
 
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
 
     z-index: 100;
 
-    animation: fadeIn 0.4s ease;
+    animation: fadeIn 0.45s ease;
 }
 
+
+/* Secret card */
+
 .easter-card {
-    max-width: 450px;
+    position: relative;
 
-    padding: 40px 35px;
+    width: 100%;
+    max-width: 470px;
 
-    background: #fffafd;
+    padding: 50px 42px 42px;
 
-    border-radius: 20px;
+    background:
+        linear-gradient(
+            145deg,
+            #fffdfb,
+            #fff8fb
+        );
+
+    border: 1px solid rgba(183,154,114,0.28);
+
+    border-radius: 5px;
 
     text-align: center;
 
-    color: #5c4775;
+    color: #5c4a58;
 
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    box-shadow:
+        0 30px 80px rgba(35,24,40,0.3),
+        0 3px 12px rgba(255,255,255,0.8);
 
-    animation: popIn 0.5s ease;
+    outline: 1px solid rgba(154,113,135,0.12);
+
+    outline-offset: -10px;
+
+    animation: popIn 0.55s cubic-bezier(.2,.8,.2,1);
 }
+
+
+/* Tiny decorative corners */
+
+.easter-card::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: 20px;
+    left: 25px;
+
+    color: #b79a72;
+
+    font-size: 12px;
+
+    opacity: 0.7;
+}
+
+.easter-card::after {
+    content: "✦";
+
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    color: #b79a72;
+
+    font-size: 12px;
+
+    opacity: 0.7;
+}
+
+
+/* Ribbon */
 
 .easter-ribbon {
-    font-size: 55px;
+    font-size: 45px;
 
-    animation: ribbonFloat 2s ease-in-out infinite;
+    margin-bottom: 5px;
+
+    animation: ribbonFloat 2.5s ease-in-out infinite;
 }
+
+@keyframes ribbonFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(2deg);
+    }
+
+}
+
+
+/* Heading */
 
 .easter-card h2 {
-    font-family: Georgia, serif;
+    font-family: Georgia, "Times New Roman", serif;
 
-    color: #8d5571;
+    font-weight: 400;
 
-    margin: 15px 0 25px;
+    font-size: 25px;
+
+    letter-spacing: 1px;
+
+    color: #80658f;
+
+    margin: 12px 0 25px;
 }
+
+
+/* Paragraphs */
 
 .easter-card p {
-    line-height: 1.7;
+    line-height: 1.9;
 
-    font-family: Georgia, serif;
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 14px;
+
+    color: #665763;
+
+    margin: 0 0 18px;
 }
+
+
+/* Last paragraph */
+
+.easter-card p:last-of-type {
+    color: #80658f;
+
+    font-style: italic;
+
+    margin-bottom: 5px;
+}
+
+
+/* Button */
 
 .easter-card button {
     margin-top: 20px;
 
-    padding: 11px 22px;
+    padding: 12px 25px;
 
-    border: none;
-    border-radius: 20px;
+    border: 1px solid rgba(183,154,114,0.3);
 
-    background: #c8b5e8;
+    border-radius: 25px;
 
-    color: #4d3b45;
+    background: #80658f;
+
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
 
     cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
 }
+
+.easter-card button:hover {
+    background: #725878;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(92,69,103,0.2);
+}
+
+
+/* ==========================================
+   ✨ ANIMATIONS
+========================================== */
 
 @keyframes popIn {
 
     from {
-        transform: scale(0.8);
+        transform: scale(0.88) translateY(15px);
+
         opacity: 0;
     }
 
     to {
-        transform: scale(1);
+        transform: scale(1) translateY(0);
+
         opacity: 1;
     }
 
@@ -909,9 +1166,37 @@ button:hover {
 }
 
 
-/* 📱 Mobile */
+/* ==========================================
+   📱 MOBILE
+========================================== */
 
 @media (max-width: 600px) {
+
+    .easter-egg {
+        padding: 18px;
+    }
+
+    .easter-card {
+        padding: 45px 25px 35px;
+    }
+
+    .easter-card h2 {
+        font-size: 22px;
+    }
+
+    .easter-card p {
+        font-size: 13px;
+
+        line-height: 1.8;
+    }
+
+    .easter-ribbon {
+        font-size: 40px;
+    }
+
+}
+
+
 
     .music-card {
         margin-left: 10px;
@@ -927,7 +1212,7 @@ button:hover {
         bottom: 15px;
     }
 
-}
+
 .quote {
     text-align: center;
     color: #8d5571;
@@ -945,4 +1230,2029 @@ button:hover {
     font-size: 14px !important;
     color: #8d5571;
     font-style: italic;
+}
+/* ==========================================
+   🎀 ELEGANT PIN / SECRET INVITATION
+========================================== */
+
+#pin-screen {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255,255,255,0.9) 0%,
+            rgba(255,255,255,0) 45%
+        ),
+        linear-gradient(
+            135deg,
+            #eee3f4 0%,
+            #f8edf3 50%,
+            #e4d7ed 100%
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Very subtle background glow */
+
+#pin-screen::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(205, 181, 221, 0.18);
+
+    filter: blur(80px);
+
+    top: -220px;
+    left: -180px;
+}
+
+#pin-screen::after {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: rgba(231, 191, 211, 0.16);
+
+    filter: blur(80px);
+
+    bottom: -220px;
+    right: -180px;
+}
+
+
+/* Main content */
+
+.pin-page {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 520px;
+
+    text-align: center;
+
+    animation: pinEntrance 1s ease;
+}
+
+@keyframes pinEntrance {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Tiny top ornament */
+
+.top-ornament {
+    font-size: 22px;
+
+    color: #b397a8;
+
+    margin-bottom: 18px;
+
+    animation: gentleSparkle 3s ease-in-out infinite;
+}
+
+@keyframes gentleSparkle {
+
+    0%, 100% {
+        opacity: 0.45;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* Small uppercase heading */
+
+.invitation-label {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #8d7182;
+
+    margin: 0 0 12px;
+}
+
+
+/* Divider */
+
+.pin-divider {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #b79a72;
+
+    font-size: 13px;
+
+    margin-bottom: 22px;
+}
+
+.pin-divider span {
+    color: #bca8b8;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+/* Main title */
+
+.pin-page h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-weight: 400;
+
+    font-size: clamp(34px, 7vw, 52px);
+
+    letter-spacing: 1px;
+
+    color: #624b69;
+
+    margin: 0;
+}
+
+
+/* Subtitle */
+
+.pin-subtitle {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #8b7886;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin: 14px auto 30px;
+
+    max-width: 340px;
+}
+
+
+/* ==========================================
+   💌 THE ACTUAL CARD
+========================================== */
+
+.pin-card {
+    position: relative;
+
+    background: rgba(255, 252, 249, 0.88);
+
+    border: 1px solid rgba(183, 154, 114, 0.22);
+
+    border-radius: 6px;
+
+    padding: 48px 40px 42px;
+
+    box-shadow:
+        0 25px 70px rgba(79, 58, 87, 0.14),
+        0 2px 8px rgba(255,255,255,0.8);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* Small bow */
+
+.card-bow {
+    position: absolute;
+
+    top: -19px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 46px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f4d8e5;
+
+    border: 1px solid rgba(154,113,135,0.2);
+
+    border-radius: 50%;
+
+    font-size: 21px;
+
+    box-shadow:
+        0 5px 15px rgba(90,65,96,0.12);
+}
+
+
+/* Secret code label */
+
+.secret-label {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #9a7187;
+
+    margin: 5px 0 10px;
+}
+
+
+/* Instruction */
+
+.pin-instruction {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #776873;
+
+    font-size: 14px;
+
+    margin-bottom: 22px;
+}
+
+
+/* PIN input */
+
+.pin-card input {
+    display: block;
+
+    width: 180px;
+
+    margin: 0 auto 22px;
+
+    padding: 14px 10px;
+
+    border: none;
+
+    border-bottom: 1px solid #b79a72;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+
+    letter-spacing: 8px;
+
+    color: #624b69;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.pin-card input:focus {
+    border-color: #80658f;
+
+    transform: scale(1.04);
+}
+
+.pin-card input::placeholder {
+    color: #c8b8c4;
+
+    letter-spacing: 6px;
+}
+
+
+/* Unlock button */
+
+.pin-card button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 13px 27px;
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    border-radius: 30px;
+
+    background: #80658f;
+
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 14px;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 22px rgba(92,69,103,0.2);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.pin-card button:hover {
+    background: #725878;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 28px rgba(92,69,103,0.27);
+}
+
+.pin-card button span {
+    color: #e8cf9f;
+}
+
+
+/* Error / success message */
+
+#message {
+    min-height: 20px;
+
+    margin: 15px 0 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 13px;
+
+    color: #9a7187;
+}
+
+
+/* Bottom decoration */
+
+.bottom-note {
+    margin-top: 28px;
+
+    color: #9a8492;
+
+    font-family: Georgia, serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    #pin-screen {
+        padding: 30px 18px;
+    }
+
+    .pin-card {
+        padding: 45px 25px 38px;
+    }
+
+    .pin-page h1 {
+        font-size: 36px;
+    }
+
+}
+/* ==========================================
+   ⏳ ELEGANT COUNTDOWN
+========================================== */
+
+#countdown-screen {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255,255,255,0.92),
+            transparent 46%
+        ),
+        linear-gradient(
+            135deg,
+            #eee3f4 0%,
+            #f8edf3 50%,
+            #e3d5eb 100%
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Soft background glow */
+
+#countdown-screen::before {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    border-radius: 50%;
+
+    background: rgba(201, 182, 223, 0.18);
+
+    filter: blur(90px);
+
+    top: -250px;
+    right: -180px;
+}
+
+#countdown-screen::after {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: rgba(231, 191, 211, 0.15);
+
+    filter: blur(80px);
+
+    bottom: -220px;
+    left: -160px;
+}
+
+
+/* Main content */
+
+.countdown-page {
+    width: 100%;
+    max-width: 600px;
+
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    animation: countdownEntrance 1s ease;
+}
+
+@keyframes countdownEntrance {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Top ornament */
+
+.countdown-ornament {
+    color: #b79a72;
+
+    font-size: 20px;
+
+    margin-bottom: 17px;
+
+    animation: countdownSparkle 3s ease-in-out infinite;
+}
+
+@keyframes countdownSparkle {
+
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.12);
+    }
+
+}
+
+
+/* Tiny heading */
+
+.countdown-label-top {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #8d7182;
+
+    margin: 0 0 12px;
+}
+
+
+/* Divider */
+
+.countdown-divider {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #b79a72;
+
+    font-size: 13px;
+
+    margin-bottom: 24px;
+}
+
+.countdown-divider span {
+    color: #bca8b8;
+
+    font-size: 9px;
+}
+
+
+/* Main heading */
+
+.countdown-page h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-weight: 400;
+
+    font-size: clamp(34px, 6vw, 52px);
+
+    line-height: 1.15;
+
+    letter-spacing: 1px;
+
+    color: #624b69;
+
+    margin: 0;
+}
+
+
+/* Subtitle */
+
+.countdown-subtitle {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #8b7886;
+
+    font-size: 15px;
+
+    margin: 18px auto 32px;
+}
+
+
+/* ==========================================
+   💜 COUNTDOWN CARD
+========================================== */
+
+.countdown-card {
+    position: relative;
+
+    background: rgba(255, 252, 249, 0.9);
+
+    border: 1px solid rgba(183, 154, 114, 0.22);
+
+    border-radius: 6px;
+
+    padding: 38px 30px 42px;
+
+    box-shadow:
+        0 25px 70px rgba(79, 58, 87, 0.14),
+        0 2px 8px rgba(255,255,255,0.8);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* Card heading */
+
+.countdown-card-label {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #9a7187;
+
+    margin: 0 0 18px;
+}
+
+
+/* THE ACTUAL TIMER */
+
+#countdown {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(38px, 8vw, 62px);
+
+    font-weight: 400;
+
+    letter-spacing: 5px;
+
+    color: #624b69;
+
+    line-height: 1.2;
+
+    margin: 0;
+
+    text-shadow:
+        0 2px 15px rgba(98, 75, 105, 0.08);
+}
+
+
+/* Labels underneath */
+
+.time-labels {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 32px;
+
+    margin-top: 8px;
+}
+
+.time-labels span {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #a18d9b;
+}
+
+
+/* Tiny bow */
+
+.mini-bow {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -18px;
+
+    transform: translateX(-50%);
+
+    width: 42px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f4d8e5;
+
+    border: 1px solid rgba(154,113,135,0.2);
+
+    border-radius: 50%;
+
+    font-size: 19px;
+
+    box-shadow:
+        0 5px 15px rgba(90,65,96,0.12);
+}
+
+
+/* Footer */
+
+.countdown-footer {
+    margin-top: 31px;
+
+    color: #9a8492;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    #countdown-screen {
+        padding: 30px 18px;
+    }
+
+    .countdown-page h1 {
+        font-size: 36px;
+    }
+
+    .countdown-card {
+        padding: 34px 20px 38px;
+    }
+
+    #countdown {
+        font-size: 38px;
+        letter-spacing: 3px;
+    }
+
+    .time-labels {
+        gap: 22px;
+    }
+
+}
+/* ==========================================
+   🎂 ELEGANT BIRTHDAY REVEAL
+========================================== */
+
+#birthday-screen {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255,255,255,0.95),
+            transparent 48%
+        ),
+        linear-gradient(
+            135deg,
+            #e9def1 0%,
+            #f9edf3 50%,
+            #e2d5eb 100%
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Soft atmospheric glow */
+
+#birthday-screen::before {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    border-radius: 50%;
+
+    background: rgba(201,182,223,0.16);
+
+    filter: blur(100px);
+
+    top: -250px;
+    left: -200px;
+}
+
+#birthday-screen::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(231,191,211,0.14);
+
+    filter: blur(100px);
+
+    bottom: -250px;
+    right: -200px;
+}
+
+
+/* Main content */
+
+.birthday-page {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 650px;
+
+    text-align: center;
+
+    animation: birthdayReveal 1.2s ease;
+}
+
+@keyframes birthdayReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Top ornament */
+
+.birthday-ornament {
+    color: #b79a72;
+
+    font-size: 22px;
+
+    margin-bottom: 18px;
+
+    animation: birthdaySparkle 3s ease-in-out infinite;
+}
+
+@keyframes birthdaySparkle {
+
+    0%, 100% {
+        opacity: 0.45;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.12);
+    }
+
+}
+
+
+/* Tiny heading */
+
+.birthday-eyebrow {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #8d7182;
+
+    margin: 0 0 13px;
+}
+
+
+/* Dividers */
+
+.birthday-divider {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #b79a72;
+
+    font-size: 13px;
+
+    margin-bottom: 27px;
+}
+
+.birthday-divider span {
+    color: #bca8b8;
+
+    font-size: 9px;
+}
+
+
+/* Intro */
+
+.birthday-intro {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #927f8c;
+
+    font-size: 14px;
+
+    letter-spacing: 0.4px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Main title */
+
+.birthday-page h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(43px, 8vw, 72px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: 1px;
+
+    color: #624b69;
+
+    margin: 0;
+}
+
+
+/* Adline */
+
+.birthday-page h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(38px, 7vw, 62px);
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    letter-spacing: 1px;
+
+    color: #9a7187;
+
+    margin: 9px 0 3px;
+}
+
+
+/* Miss Deraaaa */
+
+.birthday-name {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #80658f;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin: 0 0 25px;
+}
+
+
+/* Aladdin */
+
+.aladdin {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 8px 19px;
+
+    border-top: 1px solid rgba(183,154,114,0.35);
+    border-bottom: 1px solid rgba(183,154,114,0.35);
+
+    color: #80658f;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    font-style: italic;
+
+    letter-spacing: 2px;
+}
+
+.aladdin span {
+    color: #b79a72;
+
+    font-size: 10px;
+}
+
+
+/* Funny little message */
+
+.birthday-message {
+    color: #7e6c79;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin: 25px auto;
+}
+
+
+/* Bottom divider */
+
+.bottom-divider {
+    margin: 22px 0 20px;
+}
+
+
+/* Surprise hint */
+
+.surprise-hint {
+    color: #95818e;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 12px;
+
+    font-style: italic;
+
+    margin-bottom: 17px;
+}
+
+
+/* Main button */
+
+.birthday-page button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 14px 30px;
+
+    border: 1px solid rgba(255,255,255,0.55);
+
+    border-radius: 30px;
+
+    background: #80658f;
+
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 14px;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 9px 25px rgba(92,69,103,0.2);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.birthday-page button:hover {
+    background: #725878;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(92,69,103,0.27);
+}
+
+.birthday-page button span {
+    color: #e8cf9f;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    #birthday-screen {
+        padding: 40px 18px;
+    }
+
+    .birthday-page h1 {
+        font-size: 45px;
+    }
+
+    .birthday-page h2 {
+        font-size: 42px;
+    }
+
+    .birthday-message {
+        font-size: 13px;
+    }
+
+}
+/* ==========================================
+   💌 ELEGANT LETTER SCREEN
+========================================== */
+
+#letter-screen {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 70px 20px;
+
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(255,255,255,0.8),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(216,194,229,0.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #e8dcef,
+            #f9edf3 50%,
+            #e3d6eb
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Soft background decoration */
+
+#letter-screen::before {
+    content: "✦";
+
+    position: fixed;
+
+    top: 12%;
+    left: 8%;
+
+    color: rgba(183,154,114,0.4);
+
+    font-size: 18px;
+
+    animation: letterFloat 4s ease-in-out infinite;
+}
+
+#letter-screen::after {
+    content: "✦";
+
+    position: fixed;
+
+    bottom: 15%;
+    right: 9%;
+
+    color: rgba(183,154,114,0.35);
+
+    font-size: 15px;
+
+    animation: letterFloat 5s ease-in-out infinite reverse;
+}
+
+@keyframes letterFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: translateY(-8px);
+        opacity: 0.8;
+    }
+
+}
+
+
+/* Main letter container */
+
+.letter-container {
+    width: 100%;
+    max-width: 760px;
+
+    position: relative;
+    z-index: 2;
+
+    animation: letterEntrance 1s ease;
+}
+
+@keyframes letterEntrance {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==========================================
+   ✦ TITLE
+========================================== */
+
+.letter-title {
+    text-align: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #80658f;
+
+    margin-bottom: 25px;
+}
+
+.letter-title span {
+    color: #b79a72;
+
+    font-size: 10px;
+
+    margin: 0 10px;
+}
+
+
+/* ==========================================
+   🤍 PAPER
+========================================== */
+
+.letter-paper {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,253,250,0.98),
+            rgba(255,248,250,0.98)
+        );
+
+    border: 1px solid rgba(183,154,114,0.28);
+
+    border-radius: 3px;
+
+    padding: 65px 75px;
+
+    box-shadow:
+        0 30px 80px rgba(75,52,82,0.17),
+        0 3px 10px rgba(255,255,255,0.8);
+
+    /* Subtle inner border */
+
+    outline: 1px solid rgba(154,113,135,0.12);
+
+    outline-offset: -10px;
+}
+
+
+/* Paper decorations */
+
+.paper-decoration {
+    position: absolute;
+
+    color: #b79a72;
+
+    opacity: 0.45;
+
+    font-size: 15px;
+}
+
+.paper-decoration.top-left {
+    top: 25px;
+    left: 30px;
+}
+
+.paper-decoration.top-right {
+    top: 25px;
+    right: 30px;
+}
+
+
+/* ==========================================
+   💌 LETTER CONTENT
+========================================== */
+
+.letter-content {
+    max-height: 60vh;
+
+    overflow-y: auto;
+
+    padding: 5px 15px 15px;
+
+    scrollbar-width: thin;
+
+    scrollbar-color: #c9b6d6 transparent;
+}
+
+
+/* Beautiful scrollbar */
+
+.letter-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.letter-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.letter-content::-webkit-scrollbar-thumb {
+    background: #c9b6d6;
+
+    border-radius: 10px;
+}
+
+
+/* Letter text */
+
+.letter-content p {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: #554750;
+
+    font-size: 15px;
+
+    line-height: 2;
+
+    margin: 0 0 22px;
+}
+
+
+/* Dear */
+
+.letter-content .dear {
+    font-size: 27px;
+
+    color: #725878;
+
+    margin-bottom: 28px;
+}
+
+
+/* Special quote */
+
+.letter-content .quote {
+    text-align: center;
+
+    color: #80658f;
+
+    font-style: italic;
+
+    padding: 14px 25px;
+
+    margin: 25px 0;
+
+    border-left: 1px solid #b79a72;
+    border-right: 1px solid #b79a72;
+
+    background: rgba(201,182,223,0.08);
+}
+
+
+/* Closing */
+
+.letter-content .closing {
+    color: #80658f;
+
+    font-size: 18px;
+
+    text-align: center;
+
+    margin-top: 30px;
+}
+
+
+/* Signature */
+
+.letter-content .signature {
+    text-align: right;
+
+    color: #80658f;
+
+    font-style: italic;
+
+    margin-top: 30px;
+}
+
+.letter-content .signature span {
+    font-size: 17px;
+
+    color: #725878;
+}
+
+
+/* P.S. */
+
+.letter-content .ps {
+    margin-top: 40px;
+
+    padding-top: 20px;
+
+    border-top: 1px dashed rgba(154,113,135,0.3);
+
+    color: #80658f;
+
+    font-size: 13px;
+
+    font-style: italic;
+}
+
+
+/* ==========================================
+   📱 MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    #letter-screen {
+        padding: 45px 15px;
+    }
+
+    .letter-paper {
+        padding: 48px 25px;
+    }
+
+    .letter-content {
+        max-height: 65vh;
+
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .letter-content p {
+        font-size: 14px;
+
+        line-height: 1.9;
+    }
+
+    .letter-content .dear {
+        font-size: 24px;
+    }
+
+    .paper-decoration {
+        font-size: 12px;
+    }
+
+    .paper-decoration.top-left {
+        left: 20px;
+        top: 20px;
+    }
+
+    .paper-decoration.top-right {
+        right: 20px;
+        top: 20px;
+    }
+
+}
+/* ==========================================
+   💌 ELEGANT ENVELOPE
+========================================== */
+
+#envelope-screen {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255,255,255,0.92),
+            transparent 48%
+        ),
+        linear-gradient(
+            135deg,
+            #e8dcef,
+            #f9edf3 50%,
+            #e2d5eb
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+.envelope-page {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 650px;
+
+    text-align: center;
+
+    animation: envelopePageIn 1s ease;
+}
+
+@keyframes envelopePageIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Small heading */
+
+.envelope-eyebrow {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #8d7182;
+
+    margin: 0 0 12px;
+}
+
+
+/* Divider */
+
+.envelope-divider {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #b79a72;
+
+    font-size: 13px;
+
+    margin-bottom: 22px;
+}
+
+.envelope-divider span {
+    color: #bca8b8;
+
+    font-size: 9px;
+}
+
+
+/* Hint */
+
+.envelope-hint {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #806f7c;
+
+    font-size: 15px;
+
+    margin-bottom: 42px;
+}
+
+
+/* ==========================================
+   💌 ENVELOPE
+========================================== */
+
+.envelope-wrapper {
+    border: none;
+
+    background: transparent;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    display: inline-block;
+}
+
+.envelope {
+    width: 330px;
+    height: 220px;
+
+    position: relative;
+
+    margin: auto;
+
+    filter:
+        drop-shadow(
+            0 25px 30px rgba(77,55,84,0.18)
+        );
+
+    transition:
+        transform 0.35s ease;
+}
+
+.envelope-wrapper:hover .envelope {
+    transform:
+        translateY(-8px)
+        rotate(-1deg);
+}
+
+
+/* Envelope back */
+
+.envelope-back {
+    position: absolute;
+
+    inset: 0;
+
+    background: #d9c0dd;
+
+    border-radius: 5px;
+
+    border: 1px solid rgba(120,85,130,0.18);
+}
+
+
+/* Letter peeking out */
+
+.letter-peek {
+    position: absolute;
+
+    left: 25px;
+    right: 25px;
+
+    top: 20px;
+
+    height: 160px;
+
+    background: #fffaf7;
+
+    border: 1px solid rgba(183,154,114,0.22);
+
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    padding-top: 24px;
+
+    color: #80658f;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 5px 15px rgba(70,50,75,0.08);
+}
+
+
+/* Envelope front */
+
+.envelope-front {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 165px solid transparent;
+    border-right: 165px solid transparent;
+
+    border-bottom: 120px solid #cdb0d3;
+
+    z-index: 4;
+}
+
+
+/* Flap */
+
+.envelope-flap {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 165px solid transparent;
+    border-right: 165px solid transparent;
+
+    border-top: 115px solid #e3cde6;
+
+    z-index: 5;
+
+    transform-origin: top center;
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+/* Seal */
+
+.envelope-seal {
+    position: absolute;
+
+    z-index: 7;
+
+    left: 50%;
+    top: 95px;
+
+    transform: translateX(-50%);
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #9a7187;
+
+    color: #f3dfb8;
+
+    font-size: 17px;
+
+    border: 3px solid #f5e5eb;
+
+    box-shadow:
+        0 5px 12px rgba(70,50,75,0.18);
+
+    transition:
+        transform 0.5s ease,
+        opacity 0.4s ease;
+}
+
+
+/* Instruction */
+
+.envelope-instruction {
+    margin-top: 35px;
+
+    color: #8f7d8a;
+
+    font-family: Georgia, serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+/* Name */
+
+.envelope-name {
+    color: #80658f;
+
+    font-family: Georgia, serif;
+
+    font-size: 13px;
+
+    font-style: italic;
+
+    margin-top: 12px;
+}
+
+
+/* ==========================================
+   💌 OPENING ANIMATION
+========================================== */
+
+.envelope-wrapper.opening .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope-wrapper.opening .envelope-seal {
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        scale(0.7);
+}
+
+.envelope-wrapper.opening .letter-peek {
+    animation: letterRise 1s ease forwards;
+}
+
+@keyframes letterRise {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-75px);
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .envelope {
+        width: 290px;
+        height: 195px;
+    }
+
+    .envelope-front {
+        border-left-width: 145px;
+        border-right-width: 145px;
+        border-bottom-width: 105px;
+    }
+
+    .envelope-flap {
+        border-left-width: 145px;
+        border-right-width: 145px;
+        border-top-width: 102px;
+    }
+
+    .letter-peek {
+        left: 22px;
+        right: 22px;
+        height: 145px;
+    }
+
+}
+#envelope-screen.screen:not(.hidden) {
+    display: flex;
+}
+/* ==========================================
+   🎆 NOTICEABLE FINALE FIREWORKS
+========================================== */
+
+#fireworks {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.firework {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #9b6bb3;
+
+    box-shadow:
+        0 0 12px #9b6bb3,
+        0 0 25px rgba(155,107,179,0.65);
+
+    animation: fireworkBurst 1.8s ease-out forwards;
+}
+
+
+/* Firework rays */
+
+.firework::before,
+.firework::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #d66b9b;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow:
+        0 -42px 0 #9b6bb3,
+        0 42px 0 #d66b9b,
+        42px 0 0 #9b6bb3,
+        -42px 0 0 #d66b9b,
+        30px 30px 0 #b57ac7,
+        -30px -30px 0 #d66b9b,
+        30px -30px 0 #9b6bb3,
+        -30px 30px 0 #b57ac7;
+}
+
+.firework::after {
+    transform:
+        translate(-50%, -50%)
+        rotate(45deg);
+
+    background: #e28ab0;
+
+    box-shadow:
+        0 -30px 0 #b57ac7,
+        0 30px 0 #d66b9b,
+        30px 0 0 #9b6bb3,
+        -30px 0 0 #e28ab0;
+}
+
+
+@keyframes fireworkBurst {
+
+    0% {
+        opacity: 0;
+
+        transform: scale(0.1);
+    }
+
+    15% {
+        opacity: 1;
+
+        transform: scale(0.7);
+    }
+
+    45% {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+    75% {
+        opacity: 0.85;
+
+        transform: scale(1.08);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform: scale(1.2);
+    }
+
+}
+
+/* Make sure the message stays above them */
+
+.final-message {
+    position: relative;
+
+    z-index: 2;
 }
