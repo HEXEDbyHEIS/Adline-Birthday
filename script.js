@@ -106,6 +106,47 @@ function showFinalScreen() {
         top: 0,
         behavior: "smooth"
     });
+
+    launchFireworks();
+}
+function launchFireworks() {
+
+    const fireworks = document.getElementById("fireworks");
+
+    fireworks.innerHTML = "";
+
+const positions = [
+    { left: "15%", top: "22%" },
+    { left: "84%", top: "20%" },
+    { left: "50%", top: "13%" },
+    { left: "10%", top: "62%" },
+    { left: "90%", top: "58%" },
+    { left: "24%", top: "40%" },
+    { left: "76%", top: "42%" },
+    { left: "50%", top: "80%" }
+];
+
+    positions.forEach(function(position, index) {
+
+        setTimeout(function() {
+
+            const firework = document.createElement("div");
+
+            firework.className = "firework";
+
+            firework.style.left = position.left;
+            firework.style.top = position.top;
+
+            fireworks.appendChild(firework);
+
+            setTimeout(function() {
+                firework.remove();
+            }, 1700);
+
+        }, index * 220);
+
+    });
+
 }
 function openEasterEgg() {
 
